@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+
+    /* Sidebar variables */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Chart variables */
+    --chart-1: 221.2 83.2% 53.3%;
+    --chart-2: 262.1 83.3% 57.8%;
+    --chart-3: 316.6 73.2% 52.4%;
+    --chart-4: 175.9 84.8% 39.8%;
+    --chart-5: 47.9 95.8% 53.1%;
+
+    /* Chart tooltip variables */
+    --tooltip-background: 0 0% 100%;
+    --tooltip-foreground: 222.2 84% 4.9%;
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+
+    /* Sidebar variables */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 240 5.9% 10%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Chart variables */
+    --chart-1: 217.2 91.2% 59.8%;
+    --chart-2: 262.1 83.3% 57.8%;
+    --chart-3: 316.6 73.2% 52.4%;
+    --chart-4: 175.9 84.8% 39.8%;
+    --chart-5: 47.9 95.8% 53.1%;
+
+    /* Chart tooltip variables */
+    --tooltip-background: 222.2 84% 4.9%;
+    --tooltip-foreground: 210 40% 98%;
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Fix for dark mode images */
+.dark img[src^="/placeholder.svg"] {
+  filter: brightness(0.8) contrast(1.2);
+}
+
+/* Additional dark mode fixes */
+.dark .product-card {
+  @apply bg-card border-border;
+}
+
+.dark .product-image {
+  @apply bg-muted;
+}
+
+.dark .hero-section {
+  @apply bg-gradient-to-r from-gray-900 to-gray-800;
+}
+
+.dark .footer {
+  @apply bg-gray-900 text-gray-200;
+}
+
+.dark .search-result {
+  @apply bg-card border-border;
+}
+
+.dark .category-card {
+  @apply bg-card hover:bg-accent;
+}
+
+/* Fix for dark mode form elements */
+.dark input,
+.dark select,
+.dark textarea {
+  @apply bg-input text-foreground;
+}
+
+/* Fix for dark mode buttons */
+.dark .btn-secondary {
+  @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
+}
+
+/* Fix for dark mode dropdown menus */
+.dark .dropdown-content {
+  @apply bg-popover text-popover-foreground border-border;
+}
+
+/* Fix for dark mode tooltips */
+.dark .tooltip {
+  @apply bg-popover text-popover-foreground;
+}
+
+/* Fix for dark mode charts */
+.dark .recharts-cartesian-grid-horizontal line,
+.dark .recharts-cartesian-grid-vertical line {
+  @apply stroke-border;
+}
+
+.dark .recharts-text {
+  @apply fill-muted-foreground;
+}
+
+/* Fix for dark mode tables */
+.dark table {
+  @apply bg-background text-foreground;
+}
+
+.dark th {
+  @apply bg-muted text-muted-foreground;
+}
+
+.dark td {
+  @apply border-border;
+}
+
+/* Fix for dark mode code blocks */
+.dark pre,
+.dark code {
+  @apply bg-muted text-muted-foreground;
+}
+
+/* Improve dark mode focus states */
+.dark *:focus-visible {
+  @apply outline-none ring-2 ring-ring;
+}
+
+/* Fix for dark mode scrollbars (webkit browsers) */
+.dark ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/30 rounded-full;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}
