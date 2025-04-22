@@ -1,70 +1,190 @@
-# Getting Started with Create React App
+# IntelliBuy - AI-Enhanced E-Commerce Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+IntelliBuy is a modern, AI-powered e-commerce platform built with Next.js, React, and Tailwind CSS. It features intelligent product recommendations, advanced search capabilities, and a responsive, mobile-friendly design.
 
-## Available Scripts
+![IntelliBuy Screenshot](./public/screenshots/desktop-home.png)
 
-In the project directory, you can run:
+## 🌟 Features
 
-### `npm start`
+- **AI-Powered Recommendations**: Personalized product suggestions based on user behavior
+- **Intelligent Search**: Natural language search with image search capabilities
+- **Responsive Design**: Optimized for all devices from mobile to desktop
+- **Dark Mode Support**: Seamless switching between light and dark themes
+- **PWA Support**: Installable as a Progressive Web App for offline access
+- **User Authentication**: Secure login and registration system
+- **Shopping Cart**: Persistent cart functionality
+- **Wishlist**: Save products for later
+- **Admin Dashboard**: Comprehensive admin interface with analytics
+- **Order Management**: Complete order lifecycle management
+- **Payment Integration**: Secure payment processing
+- **Analytics Dashboard**: Detailed insights into user behavior and sales
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Getting Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Prerequisites
 
-### `npm test`
+- Node.js 18.x or higher
+- npm or yarn
+- Git
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
 
-### `npm run build`
+1. Clone the repository:
+   \`\`\`bash
+   git clone https://github.com/yourusername/intellibuy.git
+   cd intellibuy
+   \`\`\`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Install dependencies:
+   \`\`\`bash
+   npm install
+   # or
+   yarn install
+   \`\`\`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Set up environment variables:
+   Create a `.env.local` file in the root directory with the following variables:
+   \`\`\`
+   # Database
+   DATABASE_URL=your_database_url
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   # Authentication
+   NEXTAUTH_URL=http://localhost:3000
+   NEXTAUTH_SECRET=your_nextauth_secret
 
-### `npm run eject`
+   # OpenAI (for AI features)
+   OPENAI_API_KEY=your_openai_api_key
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   # Other services
+   # Add any other API keys or service credentials here
+   \`\`\`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Run the development server:
+   \`\`\`bash
+   npm run dev
+   # or
+   yarn dev
+   \`\`\`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📱 PWA Installation
 
-## Learn More
+IntelliBuy is a Progressive Web App (PWA) that can be installed on your device for offline access:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Visit the website in a supported browser (Chrome, Edge, Safari, etc.)
+2. Look for the install prompt or use the browser's menu to "Install" or "Add to Home Screen"
+3. Once installed, the app will be available from your device's home screen or app drawer
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🧩 Project Structure
 
-### Code Splitting
+\`\`\`
+intellibuy/
+├── app/                  # Next.js App Router
+│   ├── api/              # API routes
+│   ├── admin/            # Admin dashboard pages
+│   ├── products/         # Product pages
+│   ├── categories/       # Category pages
+│   ├── account/          # User account pages
+│   ├── cart/             # Shopping cart
+│   ├── checkout/         # Checkout flow
+│   ├── layout.tsx        # Root layout
+│   └── page.tsx          # Home page
+├── components/           # React components
+│   ├── ui/               # UI components (shadcn/ui)
+│   ├── admin/            # Admin components
+│   ├── analytics/        # Analytics components
+│   └── ...               # Other components
+├── lib/                  # Utility functions and services
+│   ├── services/         # Service modules
+│   ├── db.ts             # Database client
+│   └── ...               # Other utilities
+├── public/               # Static assets
+│   ├── icons/            # App icons
+│   └── ...               # Other assets
+├── styles/               # Global styles
+├── .env.local            # Environment variables (create this)
+├── next.config.mjs       # Next.js configuration
+├── package.json          # Dependencies and scripts
+├── tailwind.config.ts    # Tailwind CSS configuration
+└── tsconfig.json         # TypeScript configuration
+\`\`\`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🛠️ Technologies Used
 
-### Analyzing the Bundle Size
+- **Frontend**:
+  - Next.js 14 (App Router)
+  - React 18
+  - Tailwind CSS
+  - shadcn/ui components
+  - Lucide React icons
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **State Management**:
+  - React Context API
+  - React Hooks
 
-### Making a Progressive Web App
+- **Authentication**:
+  - NextAuth.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Database**:
+  - PostgreSQL (via Neon)
+  - Prisma ORM
 
-### Advanced Configuration
+- **AI Features**:
+  - OpenAI API
+  - AI SDK
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **PWA**:
+  - Next PWA
+  - Service Workers
 
-### Deployment
+- **Analytics**:
+  - Custom analytics solution
+  - Chart.js / Recharts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🔄 Development Workflow
 
-### `npm run build` fails to minify
+### Code Style and Linting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+We use ESLint and Prettier for code quality and formatting:
+
+\`\`\`bash
+# Run linter
+npm run lint
+
+# Format code
+npm run format
+\`\`\`
+
+### Building for Production
+
+\`\`\`bash
+# Build the application
+npm run build
+
+# Start the production server
+npm start
+\`\`\`
+
+### Testing
+
+\`\`\`bash
+# Run tests
+npm test
+\`\`\`
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 📞 Support
+
+For support, email support@intellibuy.com or open an issue in the GitHub repository.
